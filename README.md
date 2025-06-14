@@ -198,7 +198,7 @@ export const ConfigData = {
 アクションを割り当てるキーやホイールなどのコントロールを指定します。  
 もっともシンプルな定義は、コントロール名に対してアクション名を指定します。
 ```javascript
-    keySwitch0: "ViewMode"
+    keySwitch0: "ViewHome"
 ```
 このように記述することで、keySwitch0に"ViewHome"アクションが割り当てられ、actions.ViewHome.visualで定義される形式でボタンが表示されます。  
 
