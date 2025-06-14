@@ -1,0 +1,2 @@
+# AergiaConfigurator
+Aergia Device Configurator
