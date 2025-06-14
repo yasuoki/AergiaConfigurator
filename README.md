@@ -1,2 +1,2 @@
 # AergiaConfigurator
-Aergia Device Configurator
+Aergia Devices Configurator
