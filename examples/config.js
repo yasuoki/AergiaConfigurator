@@ -3,6 +3,7 @@ import {Matrix} from "./device/matrix.js";
 import {DSMApplication} from './application/dsm/designspark_mechanical.js';
 import {VMWApplication} from "./application/vmw/video_mastering_works7.js";
 import {CalcApplication} from "./application/calc/calc.js";
+import {ArkApplication} from "./application/ark/ark.js";
 
 DSMApplication.actions.show3dPage = {
     command: Command.PageChange,
@@ -120,6 +121,19 @@ export const ConfigData = {
                     KeySwitch15: "KeyDiv",
                     Button0: "KeyEq",
                     Button1: "KeyClear",
+                }
+            }
+        },
+        ARK: {
+            application: ArkApplication,
+            binds: {
+                p : {
+                    KeySwitch12: "Run",         KeySwitch13: "MoveForward", KeySwitch14: "Dash",        KeySwitch15: "Attack",
+                    KeySwitch8: "MoveLeft",     KeySwitch9: "Jump",         KeySwitch10: "MoveRight",   KeySwitch11: "AttackTo",
+                    KeySwitch4: "LieDown",      KeySwitch5: "MoveBackward", KeySwitch6:  "ItemUse",     KeySwitch7: "Impartial",
+                    KeySwitch0: "InventoryOpen",KeySwitch1: "MapOpen",      KeySwitch2:  "WhistleMenu", KeySwitch3: "NoResistance",
+                    Button0: "AllTracking",
+                    Button1: "AllStop",
                 }
             }
         }
