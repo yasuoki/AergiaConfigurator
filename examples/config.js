@@ -1,9 +1,10 @@
-import {Command, PathUtil} from "./device/aergia_types.js";
+import {Command, Key, PathUtil} from "./device/aergia_types.js";
 import {Matrix} from "./device/matrix.js";
 import {DSMApplication} from './application/dsm/designspark_mechanical.js';
 import {VMWApplication} from "./application/vmw/video_mastering_works7.js";
 import {CalcApplication} from "./application/calc/calc.js";
 import {ArkApplication} from "./application/ark/ark.js";
+import {PlayerApplication} from "./application/player/player.js";
 
 DSMApplication.actions.show3dPage = {
     command: Command.PageChange,
@@ -16,6 +17,47 @@ DSMApplication.actions.showSketchPage = {
 DSMApplication.actions.showSectionPage = {
     command: Command.PageChange,
     page: "pageSection"
+}
+ArkApplication.actions.showAttackPage = {
+    visual: {
+        background: 0x030505,
+        text: "ATTACK",
+        fontSize: 1,
+    },
+    event_keyDown: {
+        command: Command.PageChange,
+        page: "attackPage"
+    },
+}
+ArkApplication.actions.showMovePage = {
+    visual: {
+        background: 0x030505,
+        text: "MOVE",
+        fontSize: 1,
+    },
+    event_keyUp: {
+        commands: [
+            {command: Command.KeyRelease, interval:5, value: [
+                    Key.Key0,Key.Key1,Key.Key2,Key.Key3,Key.Key4,
+                    Key.Key5,Key.Key6,Key.Key7,Key.Key8,Key.Key9]},
+            {command: Command.PageChange, page: "movePage"}
+        ]
+    }
+}
+ArkApplication.actions.escape = {
+    visual: {
+        background: 0x030505,
+        text: "ESC",
+        fontSize: 2,
+    },
+    event_keyDown: {
+        command: Command.KeyPress,
+        value: [Key.Esc]
+    },
+    event_keyUp: {
+        command: Command.KeyRelease,
+        value: [Key.Esc]
+    }
 }
 
 export const ConfigData = {
@@ -127,13 +169,31 @@ export const ConfigData = {
         ARK: {
             application: ArkApplication,
             binds: {
-                p : {
-                    KeySwitch12: "Run",         KeySwitch13: "MoveForward", KeySwitch14: "Dash",        KeySwitch15: "Attack",
-                    KeySwitch8: "MoveLeft",     KeySwitch9: "Jump",         KeySwitch10: "MoveRight",   KeySwitch11: "AttackTo",
-                    KeySwitch4: "LieDown",      KeySwitch5: "MoveBackward", KeySwitch6:  "ItemUse",     KeySwitch7: "Impartial",
-                    KeySwitch0: "InventoryOpen",KeySwitch1: "MapOpen",      KeySwitch2:  "WhistleMenu", KeySwitch3: "NoResistance",
-                    Button0: "AllTracking",
-                    Button1: "AllStop",
+                movePage : {
+                    KeySwitch12: "Run",         KeySwitch13: "MoveForward", KeySwitch14: "Jump",        KeySwitch15: "Attack",
+                    KeySwitch8: "MoveLeft",     KeySwitch9: "Dash",         KeySwitch10: "MoveRight",   KeySwitch11: "Impartial",
+                    KeySwitch4: "Prone",        KeySwitch5: "MoveBackward", KeySwitch6:  "Crouch",     KeySwitch7: "NoResistance",
+                    KeySwitch0: "InventoryOpen",KeySwitch1: "ItemUse",       KeySwitch2:  "ToggleFists", KeySwitch3: "WhistleMenu",
+                    Button0: "showAttackPage",
+                    Button1: "escape",
+                },
+                attackPage : {
+                    KeySwitch12: "UseSlot1",      KeySwitch13: "UseSlot2",  KeySwitch14: "UseSlot3",    KeySwitch15: "Attack",
+                    KeySwitch8:  "UseSlot4",      KeySwitch9:  "UseSlot5",  KeySwitch10: "UseSlot6",    KeySwitch11: "Reload",
+                    KeySwitch4:  "UseSlot7",      KeySwitch5:  "UseSlot8",  KeySwitch6:  "UseSlot9",    KeySwitch7: "UseSlot0",
+                    KeySwitch0:  "InventoryOpen", KeySwitch1:  "ItemUse",    KeySwitch2:  "ToggleFists", KeySwitch3: "WhistleMenu",
+                    Button0: "showMovePage",
+                    Button1: "escape",
+                }
+            }
+        },
+        Player:{
+            application: PlayerApplication,
+            binds: {
+                p:{
+                    KeySwitch0: "Prev",
+                    KeySwitch1: "Pause",
+                    KeySwitch2: "Next"
                 }
             }
         }

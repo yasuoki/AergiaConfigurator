@@ -2,9 +2,9 @@
 // ARK: Survival Ascended Application
 import {PathUtil, Command, Key, Color} from "../../device/aergia_types.js";
 
-const moveCommandColor = Color.Silver;
-const inventoryColor = 0x003200;
-const petCommandColor = 0x804000;
+const moveCommandColor = 0x202020;
+const inventoryColor = 0x002000;
+const petCommandColor = 0x301000;
 
 let ARKActions = {
     location: PathUtil.getSourcePath(),
@@ -106,10 +106,10 @@ let ARKActions = {
             value: [Key.Space]
         }
     },
-    LieDown: {
+    Prone: {
         visual: {
             background: moveCommandColor,
-            icon: "icon/lie_down.png"
+            icon: "icon/prone.png"
         },
         event_keyDown: {
             command: Command.KeyPress,
@@ -118,6 +118,20 @@ let ARKActions = {
         event_keyUp: {
             command: Command.KeyRelease,
             value: [Key.X]
+        }
+    },
+    Crouch: {
+        visual: {
+            background: moveCommandColor,
+            icon: "icon/crouch.png"
+        },
+        event_keyDown: {
+            command: Command.KeyPress,
+            value: [Key.C]
+        },
+        event_keyUp: {
+            command: Command.KeyRelease,
+            value: [Key.C]
         }
     },
     InventoryOpen: {
@@ -160,6 +174,124 @@ let ARKActions = {
         event_keyUp: {
             command: Command.KeyRelease,
             value: [Key.E]
+        }
+    },
+    UseSlot0: {
+        visual: {
+            background: inventoryColor,
+            text: "10",
+            fontSize:2,
+        },
+        command: Command.KeyInput,
+        value: ["0"]
+    },
+    UseSlot1: {
+        visual: {
+            background: inventoryColor,
+            text: "1",
+            fontSize:2,
+        },
+        command: Command.KeyInput,
+        value: ["1"]
+    },
+    UseSlot2: {
+        visual: {
+            background: inventoryColor,
+            text: "2",
+            fontSize:2,
+        },
+        command: Command.KeyInput,
+        value: ["2"]
+    },
+    UseSlot3: {
+        visual: {
+            background: inventoryColor,
+            text: "3",
+            fontSize:2,
+        },
+        command: Command.KeyInput,
+        value: ["3"]
+    },
+    UseSlot4: {
+        visual: {
+            background: inventoryColor,
+            text: "4",
+            fontSize:2,
+        },
+        command: Command.KeyInput,
+        value: ["4"]
+    },
+    UseSlot5: {
+        visual: {
+            background: inventoryColor,
+            text: "5",
+            fontSize:2,
+        },
+        command: Command.KeyInput,
+        value: ["5"]
+    },
+    UseSlot6: {
+        visual: {
+            background: inventoryColor,
+            text: "6",
+            fontSize:2,
+        },
+        command: Command.KeyInput,
+        value: ["6"]
+    },
+    UseSlot7: {
+        visual: {
+            background: inventoryColor,
+            text: "7",
+            fontSize:2,
+        },
+        command: Command.KeyInput,
+        value: ["7"]
+    },
+    UseSlot8: {
+        visual: {
+            background: inventoryColor,
+            text: "8",
+            fontSize:2,
+        },
+        command: Command.KeyInput,
+        value: ["8"]
+    },
+    UseSlot9: {
+        visual: {
+            background: inventoryColor,
+            text: "9",
+            fontSize:2,
+        },
+        command: Command.KeyInput,
+        value: ["9"]
+    },
+    ToggleFists: {
+        visual: {
+            background: inventoryColor,
+            icon: "icon/toggle_fists.png"
+        },
+        event_keyDown: {
+            command: Command.KeyPress,
+            value: [Key.Q]
+        },
+        event_keyUp: {
+            command: Command.KeyRelease,
+            value: [Key.Q]
+        }
+    },
+    Reload: {
+        visual: {
+            background: inventoryColor,
+            icon: "icon/reload.png"
+        },
+        event_keyDown: {
+            command: Command.KeyPress,
+            value: [Key.R]
+        },
+        event_keyUp: {
+            command: Command.KeyRelease,
+            value: [Key.R]
         }
     },
     MapOpen: {
