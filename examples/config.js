@@ -170,18 +170,18 @@ export const ConfigData = {
             application: ArkApplication,
             binds: {
                 movePage : {
-                    KeySwitch12: "Run",         KeySwitch13: "MoveForward", KeySwitch14: "Jump",        KeySwitch15: "Attack",
-                    KeySwitch8: "MoveLeft",     KeySwitch9: "Dash",         KeySwitch10: "MoveRight",   KeySwitch11: "Impartial",
-                    KeySwitch4: "Prone",        KeySwitch5: "MoveBackward", KeySwitch6:  "Crouch",     KeySwitch7: "NoResistance",
+                    KeySwitch12: "Run",         KeySwitch13: "MoveForward", KeySwitch14: "Jump",        KeySwitch15: "AllTracking",
+                    KeySwitch8: "MoveLeft",     KeySwitch9: "Dash",         KeySwitch10: "MoveRight",   KeySwitch11: "AllStop",
+                    KeySwitch4: "Prone",        KeySwitch5: "MoveBackward", KeySwitch6:  "Crouch",     KeySwitch7: "Attack",
                     KeySwitch0: "InventoryOpen",KeySwitch1: "ItemUse",       KeySwitch2:  "ToggleFists", KeySwitch3: "WhistleMenu",
                     Button0: "showAttackPage",
                     Button1: "escape",
                 },
                 attackPage : {
-                    KeySwitch12: "UseSlot1",      KeySwitch13: "UseSlot2",  KeySwitch14: "UseSlot3",    KeySwitch15: "Attack",
-                    KeySwitch8:  "UseSlot4",      KeySwitch9:  "UseSlot5",  KeySwitch10: "UseSlot6",    KeySwitch11: "Reload",
+                    KeySwitch12: "UseSlot1",      KeySwitch13: "UseSlot2",  KeySwitch14: "UseSlot3",    KeySwitch15: "OneTracking",
+                    KeySwitch8:  "UseSlot4",      KeySwitch9:  "UseSlot5",  KeySwitch10: "UseSlot6",    KeySwitch11: "OneStop",
                     KeySwitch4:  "UseSlot7",      KeySwitch5:  "UseSlot8",  KeySwitch6:  "UseSlot9",    KeySwitch7: "UseSlot0",
-                    KeySwitch0:  "InventoryOpen", KeySwitch1:  "ItemUse",    KeySwitch2:  "ToggleFists", KeySwitch3: "WhistleMenu",
+                    KeySwitch0:  "GhostMode",     KeySwitch1:  "WalkMode",    KeySwitch2:  "ToggleFists", KeySwitch3: "WhistleMenu",
                     Button0: "showMovePage",
                     Button1: "escape",
                 }

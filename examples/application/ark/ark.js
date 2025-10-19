@@ -2,9 +2,11 @@
 // ARK: Survival Ascended Application
 import {PathUtil, Command, Key, Color} from "../../device/aergia_types.js";
 
-const moveCommandColor = 0x202020;
+const moveCommandColor = 0x000030;
 const inventoryColor = 0x002000;
 const petCommandColor = 0x301000;
+const consoleCommandColor = 0x300030;
+const consoleKey = Key.JP_YEN;
 
 let ARKActions = {
     location: PathUtil.getSourcePath(),
@@ -368,7 +370,7 @@ let ARKActions = {
     AllStop: {
         visual: {
             background: petCommandColor,
-            icon: "icon/all_stop.png"
+            icon: "icon/stop_all.png"
         },
         event_keyDown: {
             command: Command.KeyPress,
@@ -382,7 +384,7 @@ let ARKActions = {
     OneStop: {
         visual: {
             background: petCommandColor,
-            icon: "icon/one_stop.png"
+            icon: "icon/stop_one.png"
         },
         event_keyDown: {
             command: Command.KeyPress,
@@ -449,6 +451,22 @@ let ARKActions = {
             value: [Key.Semicolon]
         }
     },
+    GhostMode: {
+        visual: {
+            background: consoleCommandColor,
+            icon: "icon/ghost.png"
+        },
+        command: Command.KeyInput,
+        value: [consoleKey, "ghost", Key.Enter]
+    },
+    WalkMode: {
+        visual: {
+            background: consoleCommandColor,
+            icon: "icon/walk.png"
+        },
+        command: Command.KeyInput,
+        value: [consoleKey, "walk", Key.Enter]
+    }
 }
 
 export let ArkApplication = {
