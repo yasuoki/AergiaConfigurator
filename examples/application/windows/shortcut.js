@@ -1,6 +1,6 @@
-import {PathUtil, Command, Key, Color} from "../../device/aergia_types.js";
+import {PathUtil, Command, Key, Color, Device} from "../../device/aergia_types.js";
 
-let PlayerActions = {
+let ShortcutActions = {
     location: PathUtil.getSourcePath(),
     Next: {
         visual: {
@@ -28,15 +28,28 @@ let PlayerActions = {
         },
         command: Command.KeyInput,
         value: [Key.MediaPause]
+    },
+    Scroll: {
+        visual: {
+            background: Color.DarkBlue,
+            fontSize: 1,
+            text: "scroll"
+        },
+        event_wheel: {
+            command: Command.MouseWheel,
+            delta: Device.Wheel.Delta,
+            r: -1
+        }
     }
 }
 
-export const PlayerApplication = {
+export const WindowsShortcut = {
     location: PathUtil.getSourcePath(),
     visual: {
-        text: "player",
-        color: Color.RGB(100, 100, 100),
-        background: Color.RGB(0,0,60)
+        text: "Windows",
+        color: Color.RGB(10, 10, 120),
+        icon: "icon/windows.png",
+        background: Color.RGB(80,80,80)
     },
-    actions: PlayerActions
+    actions: ShortcutActions
 }

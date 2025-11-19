@@ -5,7 +5,7 @@ import {PathUtil, Command, Key, Color} from "../../device/aergia_types.js";
 const moveCommandColor = 0x000030;
 const inventoryColor = 0x002000;
 const petCommandColor = 0x301000;
-const consoleCommandColor = 0x300030;
+const consoleCommandColor = 0x200020;
 const consoleKey = Key.JP_YEN;
 
 let ARKActions = {
@@ -273,70 +273,40 @@ let ARKActions = {
             background: inventoryColor,
             icon: "icon/toggle_fists.png"
         },
-        event_keyDown: {
-            command: Command.KeyPress,
-            value: [Key.Q]
-        },
-        event_keyUp: {
-            command: Command.KeyRelease,
-            value: [Key.Q]
-        }
+        command: Command.KeyInput,
+        value: [Key.Q]
     },
     Reload: {
         visual: {
             background: inventoryColor,
             icon: "icon/reload.png"
         },
-        event_keyDown: {
-            command: Command.KeyPress,
-            value: [Key.R]
-        },
-        event_keyUp: {
-            command: Command.KeyRelease,
-            value: [Key.R]
-        }
+        command: Command.KeyInput,
+        value: [Key.R]
     },
     MapOpen: {
         visual: {
             background: inventoryColor,
             icon: "icon/map.png"
         },
-        event_keyDown: {
-            command: Command.KeyPress,
-            value: [Key.M]
-        },
-        event_keyUp: {
-            command: Command.KeyRelease,
-            value: [Key.M]
-        }
+        command: Command.KeyInput,
+        value: [Key.M]
     },
     MapMark: {
         visual: {
             background: inventoryColor,
             icon: "icon/map_mark.png"
         },
-        event_keyDown: {
-            command: Command.KeyPress,
-            value: [Key.P]
-        },
-        event_keyUp: {
-            command: Command.KeyRelease,
-            value: [Key.P]
-        }
+        command: Command.KeyInput,
+        value: [Key.P]
     },
     WhistleMenu: {
         visual: {
             background: inventoryColor,
             icon: "icon/whistleMenu.png"
         },
-        event_keyDown: {
-            command: Command.KeyPress,
-            value: [Key.Delete]
-        },
-        event_keyUp: {
-            command: Command.KeyRelease,
-            value: [Key.Delete]
-        }
+        command: Command.KeyInput,
+        value: [Key.Delete]
     },
 
     AllTracking: {
@@ -344,112 +314,64 @@ let ARKActions = {
             background: petCommandColor,
             icon: "icon/all_tracking.png"
         },
-        event_keyDown: {
-            command: Command.KeyPress,
-            value: [Key.J]
-        },
-        event_keyUp: {
-            command: Command.KeyRelease,
-            value: [Key.J]
-        }
+        command: Command.KeyInput,
+        value: [Key.J]
     },
     OneTracking: {
         visual: {
             background: petCommandColor,
             icon: "icon/one_tracking.png"
         },
-        event_keyDown: {
-            command: Command.KeyPress,
-            value: [Key.T]
-        },
-        event_keyUp: {
-            command: Command.KeyRelease,
-            value: [Key.T]
-        }
+        command: Command.KeyInput,
+        value: [Key.T]
     },
     AllStop: {
         visual: {
             background: petCommandColor,
             icon: "icon/stop_all.png"
         },
-        event_keyDown: {
-            command: Command.KeyPress,
-            value: [Key.U]
-        },
-        event_keyUp: {
-            command: Command.KeyRelease,
-            value: [Key.U]
-        }
+        command: Command.KeyInput,
+        value: [Key.U]
     },
     OneStop: {
         visual: {
             background: petCommandColor,
             icon: "icon/stop_one.png"
         },
-        event_keyDown: {
-            command: Command.KeyPress,
-            value: [Key.Y]
-        },
-        event_keyUp: {
-            command: Command.KeyRelease,
-            value: [Key.Y]
-        }
+        command: Command.KeyInput,
+        value: [Key.Y]
     },
     Attack: {
         visual: {
             background: petCommandColor,
             icon: "icon/attack.png"
         },
-        event_keyDown: {
-            command: Command.KeyPress,
-            value: [Key.RightCtrl]
-        },
-        event_keyUp: {
-            command: Command.KeyRelease,
-            value: [Key.RightCtrl]
-        }
+        command: Command.KeyInput,
+        value: [Key.RightCtrl]
     },
     AttackTo: {
         visual: {
             background: petCommandColor,
             icon: "icon/attack_to.png"
         },
-        event_keyDown: {
-            command: Command.KeyPress,
-            value: [Key.Dot]
-        },
-        event_keyUp: {
-            command: Command.KeyRelease,
-            value: [Key.Dot]
-        }
+        command: Command.KeyInput,
+        value: [Key.Dot]
     },
     Impartial: {
         visual: {
             background: petCommandColor,
             icon: "icon/impartial.png"
         },
-        event_keyDown: {
-            command: Command.KeyPress,
-            value: [Key.End]
-        },
-        event_keyUp: {
-            command: Command.KeyRelease,
-            value: [Key.End]
-        }
+        command: Command.KeyInput,
+        value: [Key.End]
     },
     NoResistance: {
         visual: {
             background: petCommandColor,
             icon: "icon/no_resistance.png"
         },
-        event_keyDown: {
-            command: Command.KeyPress,
-            value: [Key.Semicolon]
-        },
-        event_keyUp: {
-            command: Command.KeyRelease,
-            value: [Key.Semicolon]
-        }
+        command: Command.KeyInput,
+        value: [Key.Semicolon]
     },
     GhostMode: {
         visual: {

@@ -29,7 +29,7 @@ const VMWActions = {
             icon: "icon/stop.png"
         },
         command: Command.KeyInput,
-        value: [Key.Ctrl, Key.Shift, "s"]
+        value: [Key.Alt, Key.Ctrl, Key.Shift, "s"]
     },
     FastPlay: {
         visual: {
@@ -245,8 +245,11 @@ const VMWActions = {
         ]
     },
     WheelMove: {
-        command: Command.MouseWheel,
-        delta: Device.Wheel.Delta
+        event_wheel: {
+            command: Command.MouseWheel,
+            delta: Device.Wheel.Delta,
+            r: -1
+        }
     },
     // basic key
     EnterKey: {

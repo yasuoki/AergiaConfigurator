@@ -4,7 +4,7 @@ import {DSMApplication} from './application/dsm/designspark_mechanical.js';
 import {VMWApplication} from "./application/vmw/video_mastering_works7.js";
 import {CalcApplication} from "./application/calc/calc.js";
 import {ArkApplication} from "./application/ark/ark.js";
-import {PlayerApplication} from "./application/player/player.js";
+import {WindowsShortcut} from "./application/windows/shortcut.js";
 
 DSMApplication.actions.show3dPage = {
     command: Command.PageChange,
@@ -137,7 +137,8 @@ export const ConfigData = {
                     KeySwitch15: "NextScene",
 
                     Button0: "AltKey",
-                    Button1: "ESCKey"
+                    Button1: "ESCKey",
+                    Wheel: "WheelMove"
                 }
             }
         },
@@ -187,13 +188,14 @@ export const ConfigData = {
                 }
             }
         },
-        Player:{
-            application: PlayerApplication,
+        Windows:{
+            application: WindowsShortcut,
             binds: {
                 p:{
                     KeySwitch0: "Prev",
                     KeySwitch1: "Pause",
-                    KeySwitch2: "Next"
+                    KeySwitch2: "Next",
+                    Wheel: "Scroll",
                 }
             }
         }
